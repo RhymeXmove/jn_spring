@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.javaboy.Book" id="book">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="三国演义"/>
+        <constructor-arg index="2" value="30"/>
+    </bean>
+
+    <bean class="org.javaboy.Book" id="book2">
+        <constructor-arg name="id" value="2"/>
+        <constructor-arg name="name" value="红楼"/>
+        <constructor-arg name="price" value="20"/>
+    </bean>
+
+
+<!--    set注入-->
+    <bean class="org.javaboy.Book" id="book3">
+        <property name="id" value="3"/>
+        <property name="name" value="水浒"/>
+        <property name="price" value="20"/>
+    </bean>
+
+<!--    p名称空间注入-->
+<!--    <bean class="org.javaboy.Book" id="book4" p:id="4" p:bookName="西游" p:price="33"></bean>-->
+
+    <bean class="org.utils.OkHttpUtils" factory-method="getInstance" id="okHttpClient"/>
+    <bean class="org.utils.OkHttpUtils" id="okHttpUtils"/>
+<!--    <bean class="okhttp3.OkHttpClient" factory-bean="okHttpUtils" factory-method="getInstance" id="okHttpClient"></bean>-->
+</beans>
