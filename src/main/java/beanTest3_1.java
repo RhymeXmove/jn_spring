@@ -12,7 +12,7 @@ public class beanTest3_1 {
         System.out.println(book2);
 
         Book book3 = (Book) ctx.getBean("book3");
-        System.out.println(book2);
+        System.out.println(book3);
 
 
 
