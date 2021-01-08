@@ -29,4 +29,25 @@
     <bean class="org.utils.OkHttpUtils" factory-method="getInstance" id="okHttpClient"/>
     <bean class="org.utils.OkHttpUtils" id="okHttpUtils"/>
 <!--    <bean class="okhttp3.OkHttpClient" factory-bean="okHttpUtils" factory-method="getInstance" id="okHttpClient"></bean>-->
+
+    <bean class="org.javaboy.User" id="user">
+        <property name="cat" ref="cat"/>
+    </bean>
+    <bean class="org.javaboy.Cat" id="cat">
+        <property name="name" value="小白"/>
+        <property name="color" value="白色"/>
+    </bean>
+
+    <bean class="org.javaboy.User" id="user2">
+        <property name="cat" ref="cat" />
+        <property name="favorites">
+            <array>
+                <value>足球</value>
+                <value>篮球</value>
+                <value>乒乓球</value>
+            </array>
+        </property>
+    </bean>
+
+
 </beans>

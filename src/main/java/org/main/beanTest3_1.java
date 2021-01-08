@@ -1,3 +1,6 @@
+package org.main;
+
+import com.alibaba.fastjson.JSON;
 import org.javaboy.Book;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -5,14 +8,14 @@ public class beanTest3_1 {
     public static void main(String[] args){
         ClassPathXmlApplicationContext ctx =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        Book book_1 = (Book) ctx.getBean("book");
-        System.out.println(book_1);
+        Book book1 = (Book) ctx.getBean("book");
+        System.out.println(JSON.toJSONString(book1));
 
         Book book2 = (Book) ctx.getBean("book2");
-        System.out.println(book2);
+        System.out.println(JSON.toJSONString(book2));
 
         Book book3 = (Book) ctx.getBean("book3");
-        System.out.println(book3);
+        System.out.println(JSON.toJSONString(book3));
 
 
 
