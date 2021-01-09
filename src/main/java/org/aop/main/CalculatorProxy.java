@@ -8,12 +8,8 @@ import java.lang.reflect.Proxy;
 
 //动态代理
 public class CalculatorProxy {
-    public static void main(String[] args) {
-
-    }
     public static Object getInstance(final MyCalculatorImpl myCalculator) {
-        return Proxy.newProxyInstance(
-                CalculatorProxy.class.getClassLoader(),
+        return Proxy.newProxyInstance(CalculatorProxy.class.getClassLoader(),
                 myCalculator.getClass().getInterfaces(),
                 new InvocationHandler() {
                  /**
