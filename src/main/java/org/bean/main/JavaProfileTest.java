@@ -1,7 +1,8 @@
-package org.main;
+package org.bean.main;
 
-import org.config.JavaConfig;
-import org.javaboy.DataSource;
+import com.alibaba.fastjson.JSON;
+import org.bean.config.JavaConfig;
+import org.bean.javaboy.DataSource;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 // profile通过java文件配置
@@ -13,6 +14,6 @@ public class JavaProfileTest {
         ctx.register(JavaConfig.class);
         ctx.refresh();
         DataSource ds = (DataSource) ctx.getBean("ds");
-        System.out.println(ds);
+        System.out.println(JSON.toJSONString(ds));
     }
 }

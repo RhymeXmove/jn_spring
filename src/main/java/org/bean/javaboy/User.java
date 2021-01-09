@@ -1,4 +1,4 @@
-package org.javaboy;
+package org.bean.javaboy;
 
 import java.util.Arrays;
 import java.util.List;

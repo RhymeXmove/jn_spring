@@ -1,14 +1,13 @@
-package org.main;
+package org.bean.main;
 
-import org.config.JavaConfig;
-import org.dao.ShowCmd;
+import org.bean.config.JavaConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class ShowCmdTest {
+public class JavaBeanTest_3_5 {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx
                 = new AnnotationConfigApplicationContext(JavaConfig.class);
-        ShowCmd showCmd = (ShowCmd) ctx.getBean("showCmd");
-        System.out.println(showCmd.showCmd());
+        SayHello hello = ctx.getBean(SayHello.class);
+        System.out.println(hello.sayHello("javaboy"));
     }
 }

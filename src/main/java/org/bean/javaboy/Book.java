@@ -1,4 +1,4 @@
-package org.javaboy;
+package org.bean.javaboy;
 
 public class Book {
     private Integer id;

@@ -1,16 +1,16 @@
-package org.config;
+package org.bean.config;
 
-import org.dao.ShowCmd;
-import org.impl.LinuxCondition;
-import org.impl.LinuxShowCmd;
-import org.impl.WinShowCmd;
-import org.impl.WindowsCondition;
-import org.javaboy.DataSource;
-import org.main.SayHello;
+import org.bean.main.SayHello;
+import org.bean.dao.ShowCmd;
+import org.bean.impl.LinuxCondition;
+import org.bean.impl.LinuxShowCmd;
+import org.bean.impl.WinShowCmd;
+import org.bean.impl.WindowsCondition;
+import org.bean.javaboy.DataSource;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan(basePackages = "org.service")
+@ComponentScan(basePackages = "org.bean.service")
 public class JavaConfig {
 
     @Bean("javaboy")

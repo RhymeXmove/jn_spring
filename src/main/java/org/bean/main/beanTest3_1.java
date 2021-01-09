@@ -1,7 +1,7 @@
-package org.main;
+package org.bean.main;
 
 import com.alibaba.fastjson.JSON;
-import org.javaboy.Book;
+import org.bean.javaboy.Book;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class beanTest3_1 {

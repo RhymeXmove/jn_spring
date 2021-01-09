@@ -1,7 +1,7 @@
-package org.main;
+package org.bean.main;
 
 import com.alibaba.fastjson.JSON;
-import org.javaboy.User;
+import org.bean.javaboy.User;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserTest {

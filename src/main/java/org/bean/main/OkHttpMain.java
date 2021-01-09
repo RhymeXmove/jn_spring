@@ -1,4 +1,4 @@
-package org.main;
+package org.bean.main;
 
 import com.sun.istack.internal.NotNull;
 import okhttp3.*;

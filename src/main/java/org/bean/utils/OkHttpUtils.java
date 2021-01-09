@@ -1,4 +1,4 @@
-package org.utils;
+package org.bean.utils;
 import okhttp3.OkHttpClient;
 
 public class OkHttpUtils {

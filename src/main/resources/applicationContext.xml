@@ -4,13 +4,13 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean class="org.javaboy.Book" id="book">
+    <bean class="org.bean.javaboy.Book" id="book">
         <constructor-arg index="0" value="1"/>
         <constructor-arg index="1" value="三国演义"/>
         <constructor-arg index="2" value="30"/>
     </bean>
 
-    <bean class="org.javaboy.Book" id="book2">
+    <bean class="org.bean.javaboy.Book" id="book2">
         <constructor-arg name="id" value="2"/>
         <constructor-arg name="name" value="红楼"/>
         <constructor-arg name="price" value="20"/>
@@ -18,7 +18,7 @@
 
 
 <!--    set注入-->
-    <bean class="org.javaboy.Book" id="book3">
+    <bean class="org.bean.javaboy.Book" id="book3">
         <property name="id" value="3"/>
         <property name="name" value="水浒"/>
         <property name="price" value="20"/>
@@ -27,25 +27,25 @@
 <!--    p名称空间注入-->
 <!--    <bean class="org.javaboy.Book" id="book4" p:id="4" p:bookName="西游" p:price="33"></bean>-->
 
-    <bean class="org.utils.OkHttpUtils" factory-method="getInstance" id="okHttpClient"/>
-    <bean class="org.utils.OkHttpUtils" id="okHttpUtils"/>
+    <bean class="org.bean.utils.OkHttpUtils" factory-method="getInstance" id="okHttpClient"/>
+    <bean class="org.bean.utils.OkHttpUtils" id="okHttpUtils"/>
 <!--    <bean class="okhttp3.OkHttpClient" factory-bean="okHttpUtils" factory-method="getInstance" id="okHttpClient"></bean>-->
-    <bean class="org.javaboy.Cat" id="cat">
+    <bean class="org.bean.javaboy.Cat" id="cat">
         <property name="name" value="小白"/>
         <property name="color" value="白色"/>
     </bean>
-    <bean class="org.javaboy.Cat" id="cat2">
+    <bean class="org.bean.javaboy.Cat" id="cat2">
         <property name="name" value="小黑"/>
         <property name="color" value="黑色"/>
     </bean>
 
 <!--对象注入-->
-    <bean class="org.javaboy.User" id="user_object">
+    <bean class="org.bean.javaboy.User" id="user_object">
         <property name="cat" ref="cat"/>
     </bean>
 
 <!--数组注入,arry节点-->
-    <bean class="org.javaboy.User" id="user_arry">
+    <bean class="org.bean.javaboy.User" id="user_arry">
         <property name="cat" ref="cat" />
         <property name="favorites">
             <array>
@@ -57,7 +57,7 @@
     </bean>
 
     <!--数组注入,list节点-->
-    <bean class="org.javaboy.User" id="user_list">
+    <bean class="org.bean.javaboy.User" id="user_list">
         <property name="cat" ref="cat" />
         <property name="favorites">
             <list>
@@ -71,7 +71,7 @@
                 <ref bean="cat"/>
                 <ref bean="cat2"/>
 <!--                可以通过ref使用外部定义好的Bean,也可以直接在list或者array节点中定义bean.-->
-                <bean class="org.javaboy.Cat" id="cat3">
+                <bean class="org.bean.javaboy.Cat" id="cat3">
                     <property name="name" value="小花"/>
                     <property name="color" value="花色"/>
                 </bean>
@@ -80,7 +80,7 @@
     </bean>
 
 <!--    map注入-->
-    <bean class="org.javaboy.User" id="user_map">
+    <bean class="org.bean.javaboy.User" id="user_map">
         <property name="map">
             <map>
                 <entry key="age" value="99"/>
@@ -90,7 +90,7 @@
     </bean>
 
 <!--    properties注入-->
-    <bean class="org.javaboy.User" id="user_properties">
+    <bean class="org.bean.javaboy.User" id="user_properties">
         <property name="info">
             <props>
                 <prop key="age">99</prop>
@@ -101,7 +101,7 @@
 
 
     <beans profile="dev">
-        <bean class="org.javaboy.DataSource" id="dataSource">
+        <bean class="org.bean.javaboy.DataSource" id="dataSource">
             <property name="url" value="jdbc:mysql:///devdb" />
             <property name="password" value="root"/>
             <property name="username" value="root"/>
@@ -109,7 +109,7 @@
     </beans>
 
     <beans profile="prod">
-        <bean class="org.javaboy.DataSource" id="dataSource">
+        <bean class="org.bean.javaboy.DataSource" id="dataSource">
             <property name="url" value="jdbc:mysql://111.111.11.111/devdb" />
             <property name="password" value="jasjkdlalfhsasjkf" />
             <property name="username" value="root" />

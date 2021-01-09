@@ -1,5 +1,6 @@
-package org.main;
-import org.javaboy.DataSource;
+package org.bean.main;
+import com.alibaba.fastjson.JSON;
+import org.bean.javaboy.DataSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 // profile通过XML文件配置
@@ -12,6 +13,6 @@ public class JavaProfile_XML_Test {
         ctx.setConfigLocation("applicationContext.xml");
         ctx.refresh();
         DataSource dataSource = (DataSource) ctx.getBean("dataSource");
-        System.out.println(dataSource);
+        System.out.println(JSON.toJSONString(dataSource));
     }
 }

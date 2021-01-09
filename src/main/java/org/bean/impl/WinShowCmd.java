@@ -1,6 +1,6 @@
-package org.impl;
+package org.bean.impl;
 
-import org.dao.ShowCmd;
+import org.bean.dao.ShowCmd;
 
 public class WinShowCmd implements ShowCmd {
     @Override
