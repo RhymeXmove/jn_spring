@@ -4,7 +4,7 @@ import org.dao.ShowCmd;
 
 public class LinuxShowCmd implements ShowCmd {
     @Override
-    public String ShowCmd() {
+    public String showCmd() {
         return "ls";
     }
 }
