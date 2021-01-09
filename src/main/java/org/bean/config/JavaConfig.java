@@ -30,6 +30,10 @@ public class JavaConfig {
         return new LinuxShowCmd();
     }
 
+    @Bean("userDao333")
+    org.bean.aware.SayHello sayHelloAware() {
+        return new org.bean.aware.SayHello();
+    }
 
     @Bean("ds")
     @Profile("dev")
