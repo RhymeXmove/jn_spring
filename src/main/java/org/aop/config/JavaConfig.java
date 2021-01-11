@@ -15,6 +15,4 @@ import org.springframework.context.annotation.*;
 @ComponentScan(basePackages = "org.aop.service")
 public class JavaConfig {
 
-    @Bean("MyCalculator")
-    MyCalculator myCalculator() { return new MyCalculatorImpl();}
 }

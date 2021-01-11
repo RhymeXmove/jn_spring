@@ -1,7 +1,12 @@
 package org.aop.main;
 
+import com.alibaba.fastjson.JSON;
+import org.aop.config.JavaConfig;
+import org.aop.dao.MyCalculator;
 import org.aop.impl.MyCalculatorImpl;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -21,14 +26,21 @@ public class CalculatorProxy {
                   **/
 
                  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable{
-                     System.out.println(method.getName() + "方法开始执行啦。。。。。。。。。。");
+                     System.out.println(method.getName() + "方法开始执行。。。。。。。。。。\n");
                      Object invoke = method.invoke(myCalculator, args);
-                     System.out.println(method.getName() + "方法执行结束啦。。。。。。。。。。");
+                     System.out.println("方法执行结果:" + invoke+"\n");
+                     System.out.println(method.getName() + "方法执行结束。。。。。。。。。。\n");
 
                      return invoke;
                  }
 
         });
 
+    }
+
+    public static void main(String[] args) {
+        MyCalculatorImpl myCalculatorImpl = new MyCalculatorImpl();
+        Object proxyArithmetic = CalculatorProxy.getInstance(myCalculatorImpl);
+        ((MyCalculator)proxyArithmetic).add(1,2);
     }
 }
