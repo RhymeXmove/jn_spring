@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-//动态代理
+//动态代理1
 public class CalculatorProxy {
     public static Object getInstance(final MyCalculatorImpl myCalculator) {
         return Proxy.newProxyInstance(CalculatorProxy.class.getClassLoader(),
@@ -24,7 +24,6 @@ public class CalculatorProxy {
                   *   @return
                   *   @throws Throwable
                   **/
-
                  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable{
                      System.out.println(method.getName() + "方法开始执行。。。。。。。。。。\n");
                      Object invoke = method.invoke(myCalculator, args);
@@ -33,7 +32,6 @@ public class CalculatorProxy {
 
                      return invoke;
                  }
-
         });
 
     }
