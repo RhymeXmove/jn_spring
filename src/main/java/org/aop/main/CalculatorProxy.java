@@ -1,12 +1,8 @@
 package org.aop.main;
 
-import com.alibaba.fastjson.JSON;
-import org.aop.config.JavaConfig;
 import org.aop.dao.MyCalculator;
 import org.aop.impl.MyCalculatorImpl;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
